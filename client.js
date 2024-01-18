@@ -104,10 +104,16 @@ new Vue({
             this.message.user = '';
             this.message.text = '';
             this.message.timastamp = '';
+            setTimeout(() => {
+                document.getElementById('panB').scrollTop =  100000000000000;
+            },10)
 
-            $("#messages").bind('DOMSubtreeModified', function () { // отслеживаем изменение содержимого блока
+            /*$("#messages").bind('DOMSubtreeModified', function () { // отслеживаем изменение содержимого блока
                 document.getElementById('panB').scrollTop = 10000000000000000000000000;
             });
+            $("#messages").on('DOMSubtreeModified', () => {
+                document.getElementById('panB').scrollTop = 10000000000000000000000000;
+            }, false);*/
         },
         sendReg: function (res) {
             this.message.reg = true;
